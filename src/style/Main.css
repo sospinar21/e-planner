@@ -1,231 +1,270 @@
-h1 {
-  font-size: 7vh;
-  font-family: 'Exo', sans-serif;
-  color: #fff;
-  text-transform: uppercase;
-}
+  body {
+    font-family: 'Work Sans', sans-serif;
+  }
 
-h2 {
-  font-family: 'Work Sans', sans-serif;
-  font-size: 6vh;
-  color: #fff;
-  margin-top: 30px;
-  text-transform: uppercase;
-}
+  h1 {
+    font-size: 2rem;
+    font-family: 'Exo', sans-serif;
+    color: #fff;
+    font-weight: 300;
+  }
 
-h3 {
-  font-size: 4vh;
-  color: #fff;
-  font-family: 'Work Sans', sans-serif;
-}
+  h2 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 6vh;
+    color: #838484;
+    margin-top: 30px;
+    text-transform: uppercase;
+  }
 
-h4 { 
-  font-size: 3vh;
-  color:#fff;
-  font-family: 'Work Sans', sans-serif;
-}
+  h3 {
+    font-size: 4vh;
+    color: #fff;
+    font-family: 'Work Sans', sans-serif;
+  }
 
-h5 {
-  font-size: 4vh;
-  color: #fff;
-  margin-bottom: 30px;
-  margin-top: 15px;
-  font-family: 'Work Sans', sans-serif;
-}
-li {
-  font-size: 2.2vh;
-  color: white;
-  line-height: 13vh;
-  padding:0px 10px;
-  text-transform: uppercase;
-  cursor: pointer;
-  font-family: 'Work Sans', sans-serif;
-}
+  h4 { 
+    font-size: 3vh;
+    color:#fff;
+    font-family: 'Work Sans', sans-serif;
+  }
 
-header {
-  height: 60vw;
-  text-align: center;
-  background-image: url(../images/header-bg.gif);
-  background-size: cover;
-}
+  h5 {
+    font-size: 4vh;
+    color: #fff;
+    margin-bottom: 30px;
+    margin-top: 15px;
+    font-family: 'Work Sans', sans-serif;
+  }
 
-header button {
-  background: none;
-  border: none;
-  height: 10vh;
-  border: 1px solid #fff;
-  width: 25vh;
-  color: #fff;
-}
+  .heroImage {
+    height: 675px;
+    text-align: center;
+    position: relative;
+    background-image: url("../assets/hero-image.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
 
-button {
-  font-size: 2.5vh;
-  height: 5vh;
-  width: 20vh;
-  padding: 1vh 1vh 1vh 1vh;
-  border-radius: 3px;
-  color: #3C4040;
-  font-family: 'Work Sans', sans-serif;
-  font-weight: bold;
-  background: transparent;
-  text-transform: uppercase;
-  color: #fff;
-}
+  button {
+    font-size: 2.5vh;
+    height: 5vh;
+    width: 20vh;
+    padding: 1vh 1vh 1vh 1vh;
+    border-radius: 3px;
+    color: #3C4040;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: bold;
+    background: transparent;
+    text-transform: uppercase;
+    color: #fff;
+  }
 
-button:hover{
-  background-color: #41424c;
-  cursor: pointer;
-  color: white;
-}
+  button:hover{
+    background-color: #41424c;
+    cursor: pointer;
+    color: white;
+  }
 
-.getStarted button {
+  .getStarted button {
+      font-size: 1.7vh;
+      height: 6vh;
+      width: 25vh;
+  }
+
+  .link button {
+      font-size: 1.9vh;
+      color: #41424c;
+      border: 1px solid;
+  }
+
+  .link button:hover {
+    color: #fff;
+  }
+
+  footer{
+    height: 20vh;
+    background-color: blue;
+  }
+
+  .mainTitle{
+    margin: auto;
+    padding-top: 35vh;
+  }
+
+  .slogan {
+    margin: 6vh 0 13vh 0;
+  }
+
+  .signUp {
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: transparent;
     font-size: 1.7vh;
-    height: 6vh;
-    width: 25vh;
-}
+  }
 
-.link button {
-    font-size: 1.9vh;
-    color: #41424c;
-    border: 1px solid;
-}
+  .links h5 {
+      color: #41424c;
+  }
 
-.link button:hover {
-  color: #fff;
-}
+  .signUp:hover {
+  background-color: #333;
+  cursor: pointer;
+  }
 
-footer{
-  height: 20vh;
-  background-color: blue;
-}
+  .logo img {
+      margin-left: 25px;
+  }
 
-.mainTitle{
-  margin: auto;
-  padding-top: 35vh;
-}
+  .student img {
+    border: 6px solid #905b2c;
+    height: 33vh;
+    margin-bottom: 3vh;
+    background: transparent;
+  }
 
-.slogan {
-  margin: 6vh 0 13vh 0;
-}
+  .people{
+    margin-top: 15vh;
+    display: flex;
+    justify-content: space-evenly;
+  }
 
-.signUp {
-  border: 1px solid #fff;
-  color: #fff;
-  background-color: transparent;
-  font-size: 1.7vh;
-}
-
-.links h5 {
-    color: #41424c;
-}
-
-.signUp:hover {
-background-color: #333;
-cursor: pointer;
-}
-
-.logo img {
-    margin-left: 25px;
-}
-
-.menu{
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: 14vh;
-  background-color: #41424c;
-  position: fixed;
-  z-index: 30;
-  margin-top: 0;
-}
-
-.menu li a {
-  color: #fff;
-  text-decoration: none;
-
-}
-
-.logo {
+  .description {
+    height: 50vw;
+    float: left;
     width: 50%;
-    padding-top: 6px;
+    padding: 20vh 0vh 2vh 25vh;
+    background-color: #fff;
+    text-align: left;
+    line-height: 1.5;
+    display: block;
+    position: relative;
+  }
+
+  .description.img {
+    background-image: url(../images/home-desk.jpg);
+    background-size: cover;
+  }
+
+  .description li {
+    font-size: 4vh;
+    color: #3C4040;
+    line-height: 6vh;
+    margin-bottom: 37px;
+    font-family: 'Work Sans', sans-serif;
+    list-style-image: url(../images/checkmark.jpg);
+  }
+
+  .clients {
+    text-align: center;
+    height: 45vw;
+    background: #ef9340;
+    position: relative;
+    width: 100vw;
+    padding-top: 10vh;
+    background-repeat: repeat;
+    color: white;
+    display: inline-block;
+  }
+
+  hr {
+    margin-bottom: -1px;
+    margin-top: 0px;
+  }
+
+  .signUpForm {
+    width: 300px;
+    background: rgba(59, 35, 36, 0.65);
+    border-radius: 4px;
+    display: inline-block;
+    top: 120px;
+    right: 250px;
+    padding: 30px 25px;
+    position: absolute;
+  }
+
+  .signUpForm h1 {
+    margin: 0 0 15px 0;
+  }
+
+  .signUpBtn {
+    height: 55px;
+    margin-bottom: 25px;
+    background-size: cover;
+    border-radius: 3px;
+  }
+
+  .googleBtn {
+    background-image: url("../assets/google-signup-btn.svg");
+  }
+
+  .gitHubBtn {
+    background-image: url("../assets/github-signup-btn.svg");
+  }
+
+  .emailBtn {
+    background-image: url("../assets/email-signup-btn.svg");
+  }
+
+  .signUpHr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+
+  .signUpHr span {
+      height: 1px;
+      background: #afafaf;
+      width: 40%;
+      display: inline-block;
+  }
+
+  .signUpHr .signUpHrText {
+    border: 1px solid #afafaf;
+    border-radius: 50%;
+    display: flex;
+    height: 25px;
+    width: 25px;
+    font-weight: 300;
+    font-size: 0.7rem;
+    color: #afafaf;
+    background: transparent;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .homeNotesLessons {
+    height: 500px;
+    width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
 }
 
-.menuList{
-  display: flex;
-  justify-content: space-around;
-  text-decoration: none;
-  width: 40%;
-  margin-right: 20px;
+.homeNotesLessons h2 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 2.3rem;
+    color: #838484;
+    text-align: left;
+    margin-top: 0;
 }
 
-.student img {
-  border: 6px solid #905b2c;
-  height: 33vh;
-  margin-bottom: 3vh;
-  background: transparent;
-}
-
-.people{
-  margin-top: 15vh;
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.description {
-  height: 50vw;
-  float: left;
-  width: 50%;
-  padding: 20vh 0vh 2vh 25vh;
-  background-color: #fff;
+.homeNotesLessons p {
+  color: #777;
   text-align: left;
-  line-height: 1.5;
-  display: block;
-  position: relative;
+  font-weight: 300;
+  line-height: 1.5rem;
 }
 
-.description.img {
-  background-image: url(../images/home-desk.jpg);
-  background-size: cover;
+.homeNotesLessons div {
+  width: 45%;
 }
 
-.description li {
-  font-size: 4vh;
-  color: #3C4040;
-  line-height: 6vh;
-  margin-bottom: 37px;
-  font-family: 'Work Sans', sans-serif;
-  list-style-image: url(../images/checkmark.jpg);
+.homeNotesLessons a {
+  float: left;
+  color: #4285f4;
+  text-decoration: none;
 }
-
-.clients {
-  text-align: center;
-  height: 45vw;
-  background: #ef9340;
-  position: relative;
-  width: 100vw;
-  padding-top: 10vh;
-  background-repeat: repeat;
-  color: white;
-  display: inline-block;
-}
-
-hr {
-  margin-bottom: -1px;
-  margin-top: 0px;
-}
-
-.getStarted {
-  text-align: center;
-  padding: 25px;
-  position: relative;
-  height: 14vw;
-  background-color: #41424c;
-  color: white;
-  display: inline-block;
-  width: 100vw;
-}
-
-.getStarted h1{
-  margin-bottom: 5vh;
-}
-
