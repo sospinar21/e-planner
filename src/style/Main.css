@@ -4,7 +4,7 @@
 
   h1 {
     font-size: 2rem;
-    font-family: 'Exo', sans-serif;
+    font-family: 'Exo 2', sans-serif;
     color: #fff;
     font-weight: 300;
   }
@@ -235,18 +235,21 @@
     align-items: center;
   }
 
-  .homeNotesLessons {
-    height: 500px;
+.homeNotesLessons {
+    height: 390px;
+    padding: 100px 0;
     width: 1200px;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -ms-flex-align: center;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     margin: 0 auto;
 }
 
 .homeNotesLessons h2 {
-    font-family: 'Work Sans', sans-serif;
-    font-size: 2.3rem;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 2rem;
     color: #838484;
     text-align: left;
     margin-top: 0;
@@ -254,17 +257,22 @@
 
 .homeNotesLessons p {
   color: #777;
-  text-align: left;
+  text-align: justify;
   font-weight: 300;
   line-height: 1.5rem;
 }
 
 .homeNotesLessons div {
-  width: 45%;
+  width: 40%;
 }
 
 .homeNotesLessons a {
   float: left;
   color: #4285f4;
   text-decoration: none;
+  margin-top: 10px;
+}
+
+.homeNotesLessons img {
+  height: 375px;
 }
