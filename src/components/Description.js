@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, Route } from "react-router-dom";
 
-const Profile = ({match}) => {
+const Description = ({match}) => {
   return (
     <div className ='testing'>
       {" "}
@@ -18,4 +18,4 @@ const Profile = ({match}) => {
   )
 }
 
-export default Profile
+export default Description
