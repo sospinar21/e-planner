@@ -19,7 +19,9 @@ export default class Header extends Component {
       <header>
         <section className="headerContainer">
           <article className='logo'>
+          <Link to="/">
             <img src={require("../assets/headerLogo.png")}/>
+          </Link>
           </article>
           <nav>
             <li> <Link to="/howItWorks">How it works</Link></li>
@@ -27,12 +29,6 @@ export default class Header extends Component {
             <li> <Link to="/profile">Log in</Link></li>
             <li className="headerGetStarted"> <Link to="/getStarted">Get Started</Link></li>
           </nav>
-          <Switch>
-            <Route path="/howItWorks" component={<Description/>}/>
-            <Route path="/reviews" component={Reviews}/>
-            <Route path="/profile" component={Profile}/>
-            <Route path="/getStarted" component={GetStarted}/>            
-          </Switch>
         </section>
       </header>
     )

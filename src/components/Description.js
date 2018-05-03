@@ -1,21 +1,11 @@
-import React from 'react'
-import { Link, Route } from "react-router-dom";
+import React from 'react';
 
-const Description = ({match}) => {
+const Description = () => {
   return (
-    <div className ='testing'>
-      {" "}
-      <Route
-        path={`${match.path}/:name`}
-        render={({ match }) => (
-          <div>
-            {" "}
-            <h3> {match.params.name} </h3>
-          </div>
-        )}
-      />
+    <div className='testing'>
+      <h3> in Description </h3>
     </div>
-  )
-}
+  );
+};
 
-export default Description
+export default Description;
