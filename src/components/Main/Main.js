@@ -1,20 +1,21 @@
 import React from "react"
 import "./Main.css"
 
-const MainPage = () => {
+const MainPage = ({googleLogin, githubLogin, emailLogin}) => {
+
   return (
     <div>
       <section className="heroImage">
         <section className="signUpForm">
           <h1>Sign Up</h1>
-          <article className="googleBtn signUpBtn">
+          <article className="googleBtn signUpBtn" onClick={() => googleLogin()}>
           </article>
-          <article className="gitHubBtn signUpBtn">
+          <article className="gitHubBtn signUpBtn" onClick={() => githubLogin()}>
           </article>
           <div className="signUpHr">
           <span></span><span className="signUpHrText">OR</span><span></span>
           </div>
-          <article className="emailBtn signUpBtn">
+          <article className="emailBtn signUpBtn" onClick={() => emailLogin()}>
           </article>
         </section>
       </section>

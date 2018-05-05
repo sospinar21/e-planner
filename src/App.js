@@ -8,9 +8,8 @@ import Reviews from './components/Reviews/Reviews';
 import Profile from './components/Profile/Profile';
 import GetStarted from './components/GetStarted/GetStarted';
 import { DB_CONFIG } from './components/config/config';
-import firebase from 'firebase/app'
+import * as firebase from 'firebase'
 import 'firebase/database'
-
 
 
 class App extends Component {
@@ -23,6 +22,44 @@ class App extends Component {
 
     this.app = firebase.initializeApp(DB_CONFIG)
     this.database = this.app.database().ref().child('users')
+    this.googleLogin = this.googleLogin.bind(this);
+  }
+
+  googleLogin = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+
+    firebase.auth().signInWithPopup(provider)
+
+      .then(result => {
+          const user = result.user;
+          console.log(user)
+          document.write(`Hello ${user.displayName}`);
+      })
+  }
+
+  githubLogin = () => {
+    const provider = new firebase.auth.GithubAuthProvider();
+
+    firebase.auth().signInWithPopup(provider)
+
+      .then(result => {
+          const user = result.user;
+          console.log(user)
+          document.write(`Hello ${user.displayName}`);
+      })
+  }
+
+
+ emailLogin = () => {
+    const provider = new firebase.auth.EmailAuthProvider();
+
+    firebase.auth().signInWithPopup(provider)
+
+      .then(result => {
+          const user = result.user;
+          console.log(user)
+          document.write(`Hello ${user.displayName}`);
+      })
   }
 
   // addUser = () => {
@@ -39,15 +76,15 @@ class App extends Component {
   //   })
   // }
 
-  addUserToDb = (user) => {
-    this.database.push().set({ userContent: user })
-  }
+  // addUserToDb = (user) => {
+  //   this.database.push().set({ userContent: user })
+  // }
 
   render() {
     return (
       <div className="App">
         <Header />
-            <Route exact path="/" component={MainPage}/>
+            <Route exact path="/" render={(props) => <MainPage {...props} googleLogin={this.googleLogin} githubLogin={this.githubLogin} emailLogin={this.emailLogin} />} />
             <Route path="/howItWorks" component={Description}/>
             <Route path="/reviews" component={Reviews}/>
             <Route path="/profile" component={Profile}/>
