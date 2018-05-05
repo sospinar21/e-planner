@@ -40,7 +40,6 @@
   .heroImage {
     height: 675px;
     text-align: center;
-    position: relative;
     background-image: url("../../assets/hero-image.jpg");
     background-size: cover;
     background-position: center;
