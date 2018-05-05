@@ -1,0 +1,7 @@
+.notes{
+  width: 50%; 
+  background-color: grey;
+  font-size: 2.2vh;
+  overflow: scroll;
+  outerline: none;
+}

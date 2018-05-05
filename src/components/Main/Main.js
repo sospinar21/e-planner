@@ -1,5 +1,5 @@
 import React from "react"
-import "../style/Main.css"
+import "./Main.css"
 
 const MainPage = () => {
   return (
@@ -19,7 +19,7 @@ const MainPage = () => {
         </section>
       </section>
       <section className="homeNotesLessons">
-        <img src={require("../assets/laptop-img.jpg")}/>
+        <img src={require("../../assets/laptop-img.jpg")}/>
         <div>
         <h2>Your notes & lessons in one place</h2>
         <p>Get video posted to internet for chasing red dot grab pompom in mouth and put in water dish so knock dish off table head butt cant eat out of my own dish i just saw other cats inside the house and nobody ask me before using my litter box leave dead animals as gifts.</p>
@@ -30,19 +30,19 @@ const MainPage = () => {
         <h2>Trusted by Turing students</h2>
         <div className ="people">
           <div className = "student">
-            <img src="../images/0P5A9182.jpg"/>
             <h4>Steph Ospina</h4>
+            <img src="./../images/0P5A9182.jpg"/>
           </div>
           <div className = "student">
-            <img src="../images/tyler-mcnamara.jpg"/>
+            <img src="./../images/tyler-mcnamara.jpg"/>
             <h4>Tyler McNamara</h4>
           </div>
           <div className = "student">
-            <img src="../images/dan-alvarez.jpg"/>
+            <img src="./../images/dan-alvarez.jpg"/>
             <h4>Dan Alvarez</h4>
           </div>
           <div className = "student">
-            <img src="../images/jorge.jpg"/>
+            <img src="./../images/jorge.jpg"/>
             <h4>Jorge Perez</h4>
           </div>
         </div>

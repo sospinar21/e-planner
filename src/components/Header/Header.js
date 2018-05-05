@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import '../style/Header.css';
+import './Header.css';
 import { Link, Route, Switch } from 'react-router-dom';
-import Description from './Description' 
-import Reviews from './Reviews' 
-import Profile from './Profile' 
-import GetStarted from './GetStarted' 
+import Description from '../Description/Description' 
+import Reviews from '../Reviews/Reviews' 
+import Profile from '../Profile/Profile' 
+import GetStarted from '../GetStarted/GetStarted' 
 
 
 
@@ -20,7 +20,7 @@ export default class Header extends Component {
         <section className="headerContainer">
           <article className='logo'>
           <Link to="/">
-            <img src={require("../assets/headerLogo.png")}/>
+            <img src={require("../../assets/headerLogo.png")}/>
           </Link>
           </article>
           <nav>

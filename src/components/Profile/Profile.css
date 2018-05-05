@@ -1,0 +1,33 @@
+
+
+.mod{
+  text-align: center;
+  margin: auto;
+  background-color: white;
+  height: 6vh;
+  width: 50%;
+}
+
+.notesBox{
+  color: #41424c;
+  width: 100%;
+  height: 80vh;
+  margin:0 auto;
+  padding: 15px;
+  overflow: scroll;
+}
+
+.notesBox:focus{
+    outline: none;
+}
+
+main{
+  display: flex;
+  justify-content: space-between;
+  height: 90vh;
+}
+
+.pointer{
+  cursor: pointer;
+  color: #3c4040;
+}
