@@ -1,9 +1,12 @@
 
 
 .addLessons {
-  width: 50%;
-  height: 50%;
+  width: 58%;
+  height: 59%;
   margin: 121px auto;
+  background-color: #c1c1c1;
+  padding: 2vh;
+  border: 2px solid #a9a9a999;
 }
 
 .lessonsHr {
@@ -42,6 +45,10 @@
 
 }
 
+.urlInput::placeholder {
+  color: white
+}
+
 .webflow-style-input {
   position: relative;
   display: flex;
@@ -74,19 +81,11 @@
   100%{background-position:100% 0}
 }
 
-
-.webflow-style-input input {
-  flex-grow: 1;
-  color: #7881A1;
-  font-size: 1.8rem;
-  line-height: 2.4rem;
-  vertical-align: middle;
-  background-color: transparent;
   
   &::-webkit-input-placeholder {
-    color: #7881A1;
+    color: white;
   }
-}
+
 
 .webflow-style-input button {
   color:  #7881A1;
