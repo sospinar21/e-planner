@@ -1,41 +1,111 @@
-[debug] [2018-05-03T23:10:51.671Z] ----------------------------------------------------------------------
-[debug] [2018-05-03T23:10:51.673Z] Command:       /usr/local/bin/node /usr/local/bin/firebase init
-[debug] [2018-05-03T23:10:51.673Z] CLI Version:   3.18.4
-[debug] [2018-05-03T23:10:51.673Z] Platform:      darwin
-[debug] [2018-05-03T23:10:51.673Z] Node Version:  v9.11.1
-[debug] [2018-05-03T23:10:51.673Z] Time:          Thu May 03 2018 17:10:51 GMT-0600 (MDT)
-[debug] [2018-05-03T23:10:51.673Z] ----------------------------------------------------------------------
+[debug] [2018-05-05T18:48:04.550Z] ----------------------------------------------------------------------
+[debug] [2018-05-05T18:48:04.552Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-05-05T18:48:04.552Z] CLI Version:   3.18.4
+[debug] [2018-05-05T18:48:04.552Z] Platform:      darwin
+[debug] [2018-05-05T18:48:04.552Z] Node Version:  v9.11.1
+[debug] [2018-05-05T18:48:04.552Z] Time:          Sat May 05 2018 12:48:04 GMT-0600 (MDT)
+[debug] [2018-05-05T18:48:04.552Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2018-05-03T23:10:51.680Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
-[debug] [2018-05-03T23:10:51.680Z] > authorizing via signed-in user
-[info] 
-     🔥🔥🔥🔥🔥🔥🔥🔥 🔥🔥🔥🔥 🔥🔥🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥🔥🔥 🔥🔥🔥🔥🔥🔥🔥🔥     🔥🔥🔥     🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥🔥🔥
-     🔥🔥        🔥🔥  🔥🔥     🔥🔥 🔥🔥       🔥🔥     🔥🔥  🔥🔥   🔥🔥  🔥🔥       🔥🔥
-     🔥🔥🔥🔥🔥🔥    🔥🔥  🔥🔥🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥   🔥🔥🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥
-     🔥🔥        🔥🔥  🔥🔥    🔥🔥  🔥🔥       🔥🔥     🔥🔥 🔥🔥     🔥🔥       🔥🔥 🔥🔥
-     🔥🔥       🔥🔥🔥🔥 🔥🔥     🔥🔥 🔥🔥🔥🔥🔥🔥🔥🔥 🔥🔥🔥🔥🔥🔥🔥🔥  🔥🔥     🔥🔥  🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥🔥🔥
-
-You're about to initialize a Firebase project in this directory:
-
-  /Users/sthefanyospina/Documents/Turing/stuff/e-planner
-
-[info] 
-=== Project Setup
-[info] 
-[info] First, let's associate this project directory with a Firebase project.
-[info] You can create multiple project aliases by running firebase use --add, 
-[info] but for now we'll just set up a default project.
-[info] 
-[debug] [2018-05-03T23:11:01.687Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2018-05-03T23:11:01.687Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
- { refresh_token: '1/I5yTCsFnYapPmMS5iRlIaE2kJWJZT5B0ABgx87u1WcP-bj0vmuyysYxwV7bc6ppB',
-  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
-  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
-  grant_type: 'refresh_token',
-  scope: 'email https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
- Thu May 03 2018 17:11:01 GMT-0600 (MDT)
-[debug] [2018-05-03T23:11:01.866Z] <<< HTTP RESPONSE 200
-[debug] [2018-05-03T23:11:01.889Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects  
+[debug] [2018-05-05T18:48:04.564Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-05-05T18:48:04.564Z] > authorizing via signed-in user
+[debug] [2018-05-05T18:48:04.565Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/e-planner-dc5c7  
   
- Thu May 03 2018 17:11:01 GMT-0600 (MDT)
-[debug] [2018-05-03T23:11:02.518Z] <<< HTTP RESPONSE 200
+ Sat May 05 2018 12:48:04 GMT-0600 (MDT)
+[debug] [2018-05-05T18:48:04.908Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-05T18:48:04.909Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/e-planner-dc5c7/tokens  
+  
+ Sat May 05 2018 12:48:04 GMT-0600 (MDT)
+[debug] [2018-05-05T18:48:05.178Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-05T18:48:05.179Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/e-planner-dc5c7  
+  
+ Sat May 05 2018 12:48:05 GMT-0600 (MDT)
+[debug] [2018-05-05T18:48:05.367Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/sthefanyospina/Documents/Turing/stuff/e-planner'...
+[info] 
+[debug] [2018-05-05T18:48:05.369Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/290188905660/clients/_:getWebAppConfig  
+  
+ Sat May 05 2018 12:48:05 GMT-0600 (MDT)
+[debug] [2018-05-05T18:48:05.611Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+
+[debug] [2018-05-05T18:53:26.318Z] ----------------------------------------------------------------------
+[debug] [2018-05-05T18:53:26.319Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-05-05T18:53:26.320Z] CLI Version:   3.18.4
+[debug] [2018-05-05T18:53:26.320Z] Platform:      darwin
+[debug] [2018-05-05T18:53:26.320Z] Node Version:  v9.11.1
+[debug] [2018-05-05T18:53:26.320Z] Time:          Sat May 05 2018 12:53:26 GMT-0600 (MDT)
+[debug] [2018-05-05T18:53:26.320Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-05-05T18:53:26.331Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-05-05T18:53:26.332Z] > authorizing via signed-in user
+[debug] [2018-05-05T18:53:26.333Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/e-planner-dc5c7  
+  
+ Sat May 05 2018 12:53:26 GMT-0600 (MDT)
+[debug] [2018-05-05T18:53:26.801Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-05T18:53:26.802Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/e-planner-dc5c7/tokens  
+  
+ Sat May 05 2018 12:53:26 GMT-0600 (MDT)
+[debug] [2018-05-05T18:53:27.189Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-05T18:53:27.190Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/e-planner-dc5c7  
+  
+ Sat May 05 2018 12:53:27 GMT-0600 (MDT)
+[debug] [2018-05-05T18:53:27.475Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/sthefanyospina/Documents/Turing/stuff/e-planner'...
+[info] 
+[debug] [2018-05-05T18:53:27.477Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/290188905660/clients/_:getWebAppConfig  
+  
+ Sat May 05 2018 12:53:27 GMT-0600 (MDT)
+[debug] [2018-05-05T18:53:27.824Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
+[debug] [2018-05-05T18:53:27.854Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/290188905660/clients/_:getWebAppConfig  
+  
+ Sat May 05 2018 12:53:27 GMT-0600 (MDT)
+[debug] [2018-05-05T18:53:28.060Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: main
+[info] ✔  hosting: Local server: http://localhost:5004
+
+[debug] [2018-05-05T18:55:45.314Z] ----------------------------------------------------------------------
+[debug] [2018-05-05T18:55:45.316Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-05-05T18:55:45.316Z] CLI Version:   3.18.4
+[debug] [2018-05-05T18:55:45.316Z] Platform:      darwin
+[debug] [2018-05-05T18:55:45.316Z] Node Version:  v9.11.1
+[debug] [2018-05-05T18:55:45.316Z] Time:          Sat May 05 2018 12:55:45 GMT-0600 (MDT)
+[debug] [2018-05-05T18:55:45.316Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-05-05T18:55:45.324Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-05-05T18:55:45.324Z] > authorizing via signed-in user
+[debug] [2018-05-05T18:55:45.326Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/e-planner-dc5c7  
+  
+ Sat May 05 2018 12:55:45 GMT-0600 (MDT)
+[debug] [2018-05-05T18:55:45.658Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-05T18:55:45.658Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/e-planner-dc5c7/tokens  
+  
+ Sat May 05 2018 12:55:45 GMT-0600 (MDT)
+[debug] [2018-05-05T18:55:46.002Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-05T18:55:46.003Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/e-planner-dc5c7  
+  
+ Sat May 05 2018 12:55:46 GMT-0600 (MDT)
+[debug] [2018-05-05T18:55:46.214Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/sthefanyospina/Documents/Turing/stuff/e-planner'...
+[info] 
+[debug] [2018-05-05T18:55:46.216Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/290188905660/clients/_:getWebAppConfig  
+  
+ Sat May 05 2018 12:55:46 GMT-0600 (MDT)
+[debug] [2018-05-05T18:55:46.464Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
+[debug] [2018-05-05T18:55:46.480Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/290188905660/clients/_:getWebAppConfig  
+  
+ Sat May 05 2018 12:55:46 GMT-0600 (MDT)
+[debug] [2018-05-05T18:55:46.667Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5004 is not available. Trying another port...
+[debug] [2018-05-05T18:55:46.670Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/290188905660/clients/_:getWebAppConfig  
+  
+ Sat May 05 2018 12:55:46 GMT-0600 (MDT)
+[debug] [2018-05-05T18:55:46.848Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: ./src/components/main
+[info] ✔  hosting: Local server: http://localhost:5008
+
