@@ -17,23 +17,28 @@ class App extends Component {
     super()
 
     this.state = {
-      users: [],
+      user: null,
       loggedIn: false
     }
 
     this.app = firebase.initializeApp(DB_CONFIG)
     this.database = this.app.database().ref().child('users')
     this.googleLogin = this.googleLogin.bind(this);
+    console.log(this.app)
   }
 
   googleLogin = () => {
+    console.log(this.app)
     const provider = new firebase.auth.GoogleAuthProvider();
 
     firebase.auth().signInWithPopup(provider)
 
       .then(result => {
           // const user = result.user;
-            this.setState({loggedIn: true})
+            this.setState({
+              user: result.user,
+              loggedIn: true
+            });
             this.props.history.push('/profile')
           // document.write(`Hello ${user.displayName}`);
       })
@@ -87,7 +92,7 @@ class App extends Component {
             <Route exact path="/" render={(props) => <MainPage {...props} googleLogin={this.googleLogin} githubLogin={this.githubLogin} emailLogin={this.emailLogin} />} />
             <Route path="/howItWorks" component={Description}/>
             <Route path="/reviews" component={Reviews}/>
-            <Route path="/profile" component={Profile}/>
+            <Route path="/profile" render={(props) => <Profile {...props} user={this.state.user} db={this.app} />} />
             <Route path="/getStarted" component={GetStarted}/>            
       </div>
     )
