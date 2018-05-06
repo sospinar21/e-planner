@@ -1,0 +1,20 @@
+.searchInput {
+  position: fixed;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 45%;
+  margin-left: 2vw;
+  top: 18vh;
+  /* max-width: 400px; */
+  border-radius: 2px;
+  padding: 1.4rem 2rem 1.6rem;
+  background: rgba(57, 63, 84, 0.8);
+  color: white;
+  font-size: 2vh;
+}
+
+.searchInput::placeholder {
+  color:white
+}

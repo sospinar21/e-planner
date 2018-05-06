@@ -6,9 +6,14 @@ class Notes extends Component {
     super ()
   }
 
+  addURL() {
+
+  }
+
   render() {
     return (
-      <div className='notes'> </div>
+      <div className='notes'> 
+      </div>
     )
   }
 }
