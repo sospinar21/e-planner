@@ -1,21 +1,36 @@
 import React, { Component } from 'react'
-import './Notes.css'
+import './Notes.css';
+import * as firebase from 'firebase'
+import 'firebase/database'
 
 class Notes extends Component {
-  constructor () {
-    super ()
+  constructor (props) {
+    super (props);
+    this.state = {
+      notes: '', 
+      user: ''
+    }
+
+    this.firebaseRef = firebase.database().ref();
   }
 
-  addURL() {
-
-  }
+  handleInputChange = event => {
+    this.firebaseRef.child(this.props.user.uid).set({ notes: event.target.value })
+    event.preventDefault();
+    this.setState({
+      notes: event.target.value
+    })
+  };
 
   render() {
     return (
-      <div className='notes'> 
+      <div className="notes">
+        <textarea className="notes-form" onChange={this.handleInputChange}>
+        
+        </textarea> 
       </div>
     )
   }
 }
 
-export default Notes
+export default Notes;

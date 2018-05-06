@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './style/App.css';
 import MainPage from './components/Main/Main.js';
 import Header from './components/Header/Header';
-import { Route } from 'react-router-dom';
+import { Route, Link, Redirect, Switch, BrowserRouter, withRouter } from 'react-router-dom';
 import Description from './components/Description/Description';
 import Reviews from './components/Reviews/Reviews';
 import Profile from './components/Profile/Profile';
@@ -13,27 +13,34 @@ import 'firebase/database'
 
 
 class App extends Component {
-  constructor() {
+  constructor({history}) {
     super()
 
     this.state = {
-      users: []
+      user: null,
+      loggedIn: false
     }
 
     this.app = firebase.initializeApp(DB_CONFIG)
     this.database = this.app.database().ref().child('users')
     this.googleLogin = this.googleLogin.bind(this);
+    console.log(this.app)
   }
 
   googleLogin = () => {
+    console.log(this.app)
     const provider = new firebase.auth.GoogleAuthProvider();
 
     firebase.auth().signInWithPopup(provider)
 
       .then(result => {
-          const user = result.user;
-          console.log(user)
-          document.write(`Hello ${user.displayName}`);
+          // const user = result.user;
+            this.setState({
+              user: result.user,
+              loggedIn: true
+            });
+            this.props.history.push('/profile')
+          // document.write(`Hello ${user.displayName}`);
       })
   }
 
@@ -43,9 +50,8 @@ class App extends Component {
     firebase.auth().signInWithPopup(provider)
 
       .then(result => {
-          const user = result.user;
-          console.log(user)
-          document.write(`Hello ${user.displayName}`);
+          // const user = result.user;
+          // console.log(user)
       })
   }
 
@@ -58,7 +64,6 @@ class App extends Component {
       .then(result => {
           const user = result.user;
           console.log(user)
-          document.write(`Hello ${user.displayName}`);
       })
   }
 
@@ -81,17 +86,17 @@ class App extends Component {
   // }
 
   render() {
-    return (
+      return (
       <div className="App">
         <Header />
             <Route exact path="/" render={(props) => <MainPage {...props} googleLogin={this.googleLogin} githubLogin={this.githubLogin} emailLogin={this.emailLogin} />} />
             <Route path="/howItWorks" component={Description}/>
             <Route path="/reviews" component={Reviews}/>
-            <Route path="/profile" component={Profile}/>
+            <Route path="/profile" render={(props) => <Profile {...props} user={this.state.user} db={this.app} />} />
             <Route path="/getStarted" component={GetStarted}/>            
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default withRouter(App)

@@ -7,13 +7,14 @@ import Search from '../Search/Search'
 import '../../style/reset.css'
 
 
-const Profile = ({match}) => {
+const Profile = ({ user, db }) => {
+  console.log(user)
   return (
     <div className ='testing'>
       <main>
         <Search />
         <Lessons />
-        <Notes />
+        <Notes db={db} user={user} />
       </main>
     </div>
   )
