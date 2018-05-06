@@ -12,6 +12,15 @@ class Notes extends Component {
     }
 
     this.firebaseRef = firebase.database().ref();
+    this.userNotesRef = firebase.database().ref().child(this.props.user.uid).child('notes');
+  }
+
+  componentDidMount = () => {
+    let notesFormContent = document.getElementsByClassName('notes-form');
+    this.userNotesRef.once('value', (snapshot) => {
+      const retrievedNotes = snapshot.val();
+      this.setState({notes: retrievedNotes});
+    })
   }
 
   handleInputChange = event => {
@@ -23,10 +32,11 @@ class Notes extends Component {
   };
 
   render() {
+    let retrievedNotes;
+    console.log(this.state.notes)
     return (
       <div className="notes">
-        <textarea className="notes-form" onChange={this.handleInputChange}>
-        
+        <textarea className="notes-form" onChange={this.handleInputChange} value={this.state.notes}>
         </textarea> 
       </div>
     )
