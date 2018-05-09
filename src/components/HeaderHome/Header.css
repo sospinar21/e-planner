@@ -8,6 +8,7 @@ header {
   margin-top: 0;
   z-index: 3;
   box-shadow: 1px 1px 3px #482d29;
+  margin-bottom: 2px;
 }
 
 .headerContainer {
@@ -31,7 +32,7 @@ nav {
   -ms-flex-pack: distribute;
   justify-content: space-between;
   text-decoration: none;
-  width: 40%;
+  width: 50%;
   align-items: center;
   font-size: 1rem;
   color: #838484;

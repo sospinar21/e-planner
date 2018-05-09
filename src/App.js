@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './style/App.css';
 import MainPage from './components/Main/Main.js';
-import Header from './components/Header/Header';
+import HeaderHome from './components/HeaderHome/HeaderHome';
 import { Route, Link, Redirect, Switch, BrowserRouter, withRouter } from 'react-router-dom';
 import Description from './components/Description/Description';
 import Reviews from './components/Reviews/Reviews';
@@ -18,29 +18,24 @@ class App extends Component {
 
     this.state = {
       user: null,
-      loggedIn: false
+      loggedIn: false,
     }
 
     this.app = firebase.initializeApp(DB_CONFIG)
     this.database = this.app.database().ref().child('users')
     this.googleLogin = this.googleLogin.bind(this);
-    console.log(this.app)
   }
 
   googleLogin = () => {
-    console.log(this.app)
     const provider = new firebase.auth.GoogleAuthProvider();
 
     firebase.auth().signInWithPopup(provider)
-
       .then(result => {
-          // const user = result.user;
             this.setState({
               user: result.user,
               loggedIn: true
             });
             this.props.history.push('/profile')
-          // document.write(`Hello ${user.displayName}`);
       })
   }
 
@@ -50,8 +45,6 @@ class App extends Component {
     firebase.auth().signInWithPopup(provider)
 
       .then(result => {
-          // const user = result.user;
-          // console.log(user)
       })
   }
 
@@ -63,32 +56,12 @@ class App extends Component {
 
       .then(result => {
           const user = result.user;
-          console.log(user)
       })
   }
-
-  // addUser = () => {
-  //   const usersList = this.state.users
-  //   // this.database.on('childAdded', snap = () => {
-  //     // usersList.push({
-  //       // id: snap.key,
-  //       // userInfo : snap.val().userInfo
-  //     })
-
-  //     this.setState({
-  //       users : usersList
-  //     })
-  //   })
-  // }
-
-  // addUserToDb = (user) => {
-  //   this.database.push().set({ userContent: user })
-  // }
 
   render() {
       return (
       <div className="App">
-        <Header />
             <Route exact path="/" render={(props) => <MainPage {...props} googleLogin={this.googleLogin} githubLogin={this.githubLogin} emailLogin={this.emailLogin} />} />
             <Route path="/howItWorks" component={Description}/>
             <Route path="/reviews" component={Reviews}/>

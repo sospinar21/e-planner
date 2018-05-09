@@ -12,10 +12,11 @@ class Search extends Component {
 
   render () {
     return (
-        <input
-          placeholder='Search Lessons'
-          className='searchInput'
-        /> 
+      <div></div>
+        // <input
+        //   placeholder='Search Lessons'
+        //   className='searchInput'
+        // /> 
     )
   }
 }

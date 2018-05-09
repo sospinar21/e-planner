@@ -1,21 +1,28 @@
-import React from "react"
-import "./Main.css"
+import React, { Component } from "react"
+import "./Main.css";
+import HeaderHome from '../HeaderHome/HeaderHome';
 
-const MainPage = ({googleLogin, githubLogin, emailLogin}) => {
 
+class MainPage extends Component {
+  constructor({googleLogin, githubLogin, emailLogin}) {
+    super();
+  }
+
+  render() {
   return (
     <div>
+      <HeaderHome />
       <section className="heroImage">
         <section className="signUpForm">
           <h1>Sign Up</h1>
-          <article className="googleBtn signUpBtn" onClick={() => googleLogin()}>
+          <article className="googleBtn signUpBtn" onClick={() => this.props.googleLogin()}>
           </article>
-          <article className="gitHubBtn signUpBtn" onClick={() => githubLogin()}>
+          <article className="gitHubBtn signUpBtn" onClick={() => this.props.githubLogin()}>
           </article>
           <div className="signUpHr">
           <span></span><span className="signUpHrText">OR</span><span></span>
           </div>
-          <article className="emailBtn signUpBtn" onClick={() => emailLogin()}>
+          <article className="emailBtn signUpBtn" onClick={() => this.props.emailLogin()}>
           </article>
         </section>
       </section>
@@ -27,7 +34,7 @@ const MainPage = ({googleLogin, githubLogin, emailLogin}) => {
         <a href="#">Learn More</a>
         </div>
       </section>
-      <div className = "clients">
+      {/* <div className = "clients">
         <h2>Trusted by Turing students</h2>
         <div className ="people">
           <div className = "student">
@@ -47,14 +54,15 @@ const MainPage = ({googleLogin, githubLogin, emailLogin}) => {
             <h4>Jorge Perez</h4>
           </div>
         </div>
-      </div>
-      <div className = "getStarted">
+      </div> */}
+      {/* <div className = "getStarted">
         <h5>Get started today</h5>
         <button>Get Started</button>
-      </div>
+      </div> */}
     </div>
 
   )
+}
 }
 
 export default MainPage;
