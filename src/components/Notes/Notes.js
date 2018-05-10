@@ -7,35 +7,45 @@ class Notes extends Component {
   constructor (props) {
     super (props);
     this.state = {
-      notes: '', 
-      user: ''
+      notes: '',
+      lesson: this.props.lesson,
+      user: null
     }
 
     this.firebaseRef = firebase.database().ref();
-    this.userNotesRef = firebase.database().ref().child(this.props.user.uid).child('notes');
   }
 
-  componentDidMount = () => {
-    let notesFormContent = document.getElementsByClassName('notes-form');
-    this.userNotesRef.once('value', (snapshot) => {
-      const retrievedNotes = snapshot.val();
-      this.setState({notes: retrievedNotes});
+  componentDidMount = (lesson) => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+            this.setState({ user: user.uid })
+            const firebaseRef = firebase.database().ref();
+            let userNotesRef = firebaseRef.child('users').child(user.uid).child('lessons').child('Binary Search Tree').child('notes')
+            let notesFormContent = document.getElementsByClassName('notes-form');
+
+            userNotesRef.once('value')
+            .then((snapshot) => {
+            return snapshot.val();
+            }).then(data => 
+            this.setState({notes: data}))
+      } else {
+       console.log('not signed in')
+      }
     })
   }
 
-  handleInputChange = event => {
-    this.firebaseRef.child(this.props.user.uid).set({ notes: event.target.value })
+  handleInputChange = (event) => {
     event.preventDefault();
+    this.firebaseRef.child('users').child(this.state.user).child('lessons').child('Binary Search Tree').update({ notes: event.target.value })
     this.setState({
       notes: event.target.value
     })
   };
 
   render() {
-    let retrievedNotes;
-    console.log(this.state.notes)
     return (
       <div className="notes">
+        <h1>Binary Search Tree Notes</h1>
         <textarea className="notes-form" onChange={this.handleInputChange} value={this.state.notes}>
         </textarea> 
       </div>
