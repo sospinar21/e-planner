@@ -8,26 +8,35 @@ class Notes extends Component {
     super (props);
     this.state = {
       notes: '',
-      lesson: this.props.lesson
+      lesson: this.props.lesson,
+      user: null
     }
 
     this.firebaseRef = firebase.database().ref();
-    this.userNotesRef = firebase.database().ref().child(this.props.user.uid).child('notes')
   }
 
   componentDidMount = (lesson) => {
-    let userNotesRef = this.firebaseRef.child('users').child(this.props.user.uid).child('lessons').child('HTML Canvas').child('notes')
-    let notesFormContent = document.getElementsByClassName('notes-form');
-    userNotesRef.on('value', (snapshot) => {
-      const retrievedNotes = snapshot.val();
-      this.setState({notes: retrievedNotes});
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+            this.setState({ user: user.uid })
+            const firebaseRef = firebase.database().ref();
+            let userNotesRef = firebaseRef.child('users').child(user.uid).child('lessons').child('Binary Search Tree').child('notes')
+            let notesFormContent = document.getElementsByClassName('notes-form');
+
+            userNotesRef.once('value')
+            .then((snapshot) => {
+            return snapshot.val();
+            }).then(data => 
+            this.setState({notes: data}))
+      } else {
+       console.log('not signed in')
+      }
     })
-  };
+  }
 
   handleInputChange = (event) => {
-    console.log('asdfasd')
     event.preventDefault();
-    this.firebaseRef.child('users').child(this.props.user.uid).child('lessons').child('Binary Search Tree').update({ notes: event.target.value })
+    this.firebaseRef.child('users').child(this.state.user).child('lessons').child('Binary Search Tree').update({ notes: event.target.value })
     this.setState({
       notes: event.target.value
     })
